@@ -1,3 +1,6 @@
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using PDFManagerV2.UseCases.Recibos.Interfaces;
 namespace PDFManagerV2.Desktop
 {
     internal static class Program
@@ -11,7 +14,16 @@ namespace PDFManagerV2.Desktop
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new MainForm());
+            var host = CreateHostBuilder().Build();
+            var mainForm = host.Services.GetRequiredService<MainForm>();
+            Application.Run(mainForm);
         }
+        static IHostBuilder CreateHostBuilder() =>
+            Host.CreateDefaultBuilder()
+                .ConfigureServices((hostContext, services) =>
+                {
+                    services.AddTransient<MainForm>();
+                    services.AddTransient<IFileStorageService, LocalStorageService>();
+                });
     }
 }
