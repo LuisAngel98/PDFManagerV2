@@ -31,50 +31,51 @@
             tabControl1 = new TabControl();
             Tab_Generar = new TabPage();
             groupBox1 = new GroupBox();
+            btnGuardar = new Button();
+            label7 = new Label();
+            label4 = new Label();
+            txtConcepto = new TextBox();
             label3 = new Label();
             label6 = new Label();
             label5 = new Label();
-            button1 = new Button();
-            numericUpDown1 = new NumericUpDown();
-            textBox4 = new TextBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
-            label4 = new Label();
+            btnBuscar = new Button();
+            txtMonto = new NumericUpDown();
+            txtNombres = new TextBox();
+            txtApellidos = new TextBox();
+            txtDni = new TextBox();
             label2 = new Label();
             label1 = new Label();
             Tab_Listar = new TabPage();
-            Tab_Configuracion = new TabPage();
-            label7 = new Label();
-            groupBox2 = new GroupBox();
-            label8 = new Label();
-            textBox5 = new TextBox();
-            button2 = new Button();
+            label10 = new Label();
+            label9 = new Label();
             dataGridView1 = new DataGridView();
             Col_Cliente = new DataGridViewTextBoxColumn();
             Col_Codigo = new DataGridViewTextBoxColumn();
             Col_Fecha = new DataGridViewTextBoxColumn();
-            label9 = new Label();
-            label10 = new Label();
-            groupBox3 = new GroupBox();
-            groupBox4 = new GroupBox();
-            label11 = new Label();
-            label12 = new Label();
-            textBox6 = new TextBox();
-            textBox7 = new TextBox();
-            label13 = new Label();
-            textBox8 = new TextBox();
+            groupBox2 = new GroupBox();
+            btnListar = new Button();
+            txtDniBusqueda = new TextBox();
+            label8 = new Label();
+            Tab_Configuracion = new TabPage();
             button3 = new Button();
+            groupBox4 = new GroupBox();
+            textBox8 = new TextBox();
+            label13 = new Label();
+            groupBox3 = new GroupBox();
+            textBox7 = new TextBox();
+            textBox6 = new TextBox();
+            label12 = new Label();
+            label11 = new Label();
             tabControl1.SuspendLayout();
             Tab_Generar.SuspendLayout();
             groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)txtMonto).BeginInit();
             Tab_Listar.SuspendLayout();
-            Tab_Configuracion.SuspendLayout();
-            groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            groupBox3.SuspendLayout();
+            groupBox2.SuspendLayout();
+            Tab_Configuracion.SuspendLayout();
             groupBox4.SuspendLayout();
+            groupBox3.SuspendLayout();
             SuspendLayout();
             // 
             // tabControl1
@@ -101,17 +102,18 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(btnGuardar);
             groupBox1.Controls.Add(label7);
             groupBox1.Controls.Add(label4);
-            groupBox1.Controls.Add(textBox3);
+            groupBox1.Controls.Add(txtConcepto);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(label5);
-            groupBox1.Controls.Add(button1);
-            groupBox1.Controls.Add(numericUpDown1);
-            groupBox1.Controls.Add(textBox4);
-            groupBox1.Controls.Add(textBox2);
-            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(btnBuscar);
+            groupBox1.Controls.Add(txtMonto);
+            groupBox1.Controls.Add(txtNombres);
+            groupBox1.Controls.Add(txtApellidos);
+            groupBox1.Controls.Add(txtDni);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
             groupBox1.Location = new Point(201, 18);
@@ -120,6 +122,41 @@
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Registro";
+            // 
+            // btnGuardar
+            // 
+            btnGuardar.Location = new Point(72, 350);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(284, 23);
+            btnGuardar.TabIndex = 7;
+            btnGuardar.Text = "Generar Recibo";
+            btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(45, 202);
+            label7.Name = "label7";
+            label7.Size = new Size(92, 15);
+            label7.TabIndex = 13;
+            label7.Text = "Datos del recibo";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(50, 287);
+            label4.Name = "label4";
+            label4.Size = new Size(97, 15);
+            label4.TabIndex = 3;
+            label4.Text = "Por concepto de:";
+            // 
+            // txtConcepto
+            // 
+            txtConcepto.Location = new Point(50, 305);
+            txtConcepto.Name = "txtConcepto";
+            txtConcepto.Size = new Size(306, 23);
+            txtConcepto.TabIndex = 6;
             // 
             // label3
             // 
@@ -148,63 +185,47 @@
             label5.TabIndex = 10;
             label5.Text = "Apellidos";
             // 
-            // button1
+            // btnBuscar
             // 
-            button1.Location = new Point(295, 74);
-            button1.Name = "button1";
-            button1.Size = new Size(98, 23);
-            button1.TabIndex = 9;
-            button1.Text = "Buscar";
-            button1.UseVisualStyleBackColor = true;
+            btnBuscar.Location = new Point(295, 74);
+            btnBuscar.Name = "btnBuscar";
+            btnBuscar.Size = new Size(98, 23);
+            btnBuscar.TabIndex = 2;
+            btnBuscar.Text = "Buscar";
+            btnBuscar.UseVisualStyleBackColor = true;
             // 
-            // numericUpDown1
+            // txtMonto
             // 
-            numericUpDown1.Location = new Point(50, 278);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(120, 23);
-            numericUpDown1.TabIndex = 8;
+            txtMonto.Location = new Point(50, 250);
+            txtMonto.Name = "txtMonto";
+            txtMonto.Size = new Size(120, 23);
+            txtMonto.TabIndex = 5;
             // 
-            // textBox4
+            // txtNombres
             // 
-            textBox4.Location = new Point(223, 160);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(147, 23);
-            textBox4.TabIndex = 7;
+            txtNombres.Location = new Point(223, 160);
+            txtNombres.Name = "txtNombres";
+            txtNombres.Size = new Size(147, 23);
+            txtNombres.TabIndex = 4;
             // 
-            // textBox3
+            // txtApellidos
             // 
-            textBox3.Location = new Point(50, 350);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(100, 23);
-            textBox3.TabIndex = 6;
+            txtApellidos.Location = new Point(42, 160);
+            txtApellidos.Name = "txtApellidos";
+            txtApellidos.Size = new Size(162, 23);
+            txtApellidos.TabIndex = 3;
             // 
-            // textBox2
+            // txtDni
             // 
-            textBox2.Location = new Point(42, 160);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(162, 23);
-            textBox2.TabIndex = 5;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(42, 74);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(237, 23);
-            textBox1.TabIndex = 4;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(53, 321);
-            label4.Name = "label4";
-            label4.Size = new Size(97, 15);
-            label4.TabIndex = 3;
-            label4.Text = "Por concepto de:";
+            txtDni.Location = new Point(42, 74);
+            txtDni.Name = "txtDni";
+            txtDni.Size = new Size(237, 23);
+            txtDni.TabIndex = 1;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(50, 250);
+            label2.Location = new Point(45, 232);
             label2.Name = "label2";
             label2.Size = new Size(87, 15);
             label2.TabIndex = 1;
@@ -233,63 +254,23 @@
             Tab_Listar.Text = "LISTAR";
             Tab_Listar.UseVisualStyleBackColor = true;
             // 
-            // Tab_Configuracion
+            // label10
             // 
-            Tab_Configuracion.Controls.Add(button3);
-            Tab_Configuracion.Controls.Add(groupBox4);
-            Tab_Configuracion.Controls.Add(groupBox3);
-            Tab_Configuracion.Location = new Point(4, 24);
-            Tab_Configuracion.Name = "Tab_Configuracion";
-            Tab_Configuracion.Size = new Size(784, 417);
-            Tab_Configuracion.TabIndex = 2;
-            Tab_Configuracion.Text = "CONFIGURACION";
-            Tab_Configuracion.UseVisualStyleBackColor = true;
+            label10.AutoSize = true;
+            label10.Location = new Point(642, 371);
+            label10.Name = "label10";
+            label10.Size = new Size(13, 15);
+            label10.TabIndex = 3;
+            label10.Text = "0";
             // 
-            // label7
+            // label9
             // 
-            label7.AutoSize = true;
-            label7.Location = new Point(45, 210);
-            label7.Name = "label7";
-            label7.Size = new Size(92, 15);
-            label7.TabIndex = 13;
-            label7.Text = "Datos del recibo";
-            // 
-            // groupBox2
-            // 
-            groupBox2.Controls.Add(button2);
-            groupBox2.Controls.Add(textBox5);
-            groupBox2.Controls.Add(label8);
-            groupBox2.Location = new Point(62, 27);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(649, 100);
-            groupBox2.TabIndex = 0;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Busqueda";
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(73, 44);
-            label8.Name = "label8";
-            label8.Size = new Size(30, 15);
-            label8.TabIndex = 0;
-            label8.Text = "DNI:";
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(129, 41);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(284, 23);
-            textBox5.TabIndex = 1;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(449, 41);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 2;
-            button2.Text = "Listar";
-            button2.UseVisualStyleBackColor = true;
+            label9.AutoSize = true;
+            label9.Location = new Point(551, 370);
+            label9.Name = "label9";
+            label9.Size = new Size(87, 15);
+            label9.TabIndex = 2;
+            label9.Text = "Total Registros:";
             // 
             // dataGridView1
             // 
@@ -315,23 +296,91 @@
             Col_Fecha.HeaderText = "Fecha";
             Col_Fecha.Name = "Col_Fecha";
             // 
-            // label9
+            // groupBox2
             // 
-            label9.AutoSize = true;
-            label9.Location = new Point(551, 370);
-            label9.Name = "label9";
-            label9.Size = new Size(87, 15);
-            label9.TabIndex = 2;
-            label9.Text = "Total Registros:";
+            groupBox2.Controls.Add(btnListar);
+            groupBox2.Controls.Add(txtDniBusqueda);
+            groupBox2.Controls.Add(label8);
+            groupBox2.Location = new Point(62, 27);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(649, 100);
+            groupBox2.TabIndex = 0;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Busqueda";
             // 
-            // label10
+            // btnListar
             // 
-            label10.AutoSize = true;
-            label10.Location = new Point(642, 371);
-            label10.Name = "label10";
-            label10.Size = new Size(13, 15);
-            label10.TabIndex = 3;
-            label10.Text = "0";
+            btnListar.Location = new Point(449, 41);
+            btnListar.Name = "btnListar";
+            btnListar.Size = new Size(75, 23);
+            btnListar.TabIndex = 2;
+            btnListar.Text = "Listar";
+            btnListar.UseVisualStyleBackColor = true;
+            // 
+            // txtDniBusqueda
+            // 
+            txtDniBusqueda.Location = new Point(129, 41);
+            txtDniBusqueda.Name = "txtDniBusqueda";
+            txtDniBusqueda.Size = new Size(284, 23);
+            txtDniBusqueda.TabIndex = 1;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(73, 44);
+            label8.Name = "label8";
+            label8.Size = new Size(30, 15);
+            label8.TabIndex = 0;
+            label8.Text = "DNI:";
+            // 
+            // Tab_Configuracion
+            // 
+            Tab_Configuracion.Controls.Add(button3);
+            Tab_Configuracion.Controls.Add(groupBox4);
+            Tab_Configuracion.Controls.Add(groupBox3);
+            Tab_Configuracion.Location = new Point(4, 24);
+            Tab_Configuracion.Name = "Tab_Configuracion";
+            Tab_Configuracion.Size = new Size(784, 417);
+            Tab_Configuracion.TabIndex = 2;
+            Tab_Configuracion.Text = "CONFIGURACION";
+            Tab_Configuracion.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(270, 367);
+            button3.Name = "button3";
+            button3.Size = new Size(225, 23);
+            button3.TabIndex = 2;
+            button3.Text = "Guardar Configuración";
+            button3.UseVisualStyleBackColor = true;
+            // 
+            // groupBox4
+            // 
+            groupBox4.Controls.Add(textBox8);
+            groupBox4.Controls.Add(label13);
+            groupBox4.Location = new Point(49, 252);
+            groupBox4.Name = "groupBox4";
+            groupBox4.Size = new Size(681, 100);
+            groupBox4.TabIndex = 1;
+            groupBox4.TabStop = false;
+            groupBox4.Text = "API Keys";
+            // 
+            // textBox8
+            // 
+            textBox8.Location = new Point(31, 52);
+            textBox8.Name = "textBox8";
+            textBox8.Size = new Size(333, 23);
+            textBox8.TabIndex = 1;
+            textBox8.Text = "**********";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(31, 34);
+            label13.Name = "label13";
+            label13.Size = new Size(105, 15);
+            label13.TabIndex = 0;
+            label13.Text = "API Key de RENIEC";
             // 
             // groupBox3
             // 
@@ -346,25 +395,19 @@
             groupBox3.TabStop = false;
             groupBox3.Text = "Configuración de Archivos PDF";
             // 
-            // groupBox4
+            // textBox7
             // 
-            groupBox4.Controls.Add(textBox8);
-            groupBox4.Controls.Add(label13);
-            groupBox4.Location = new Point(49, 252);
-            groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(681, 100);
-            groupBox4.TabIndex = 1;
-            groupBox4.TabStop = false;
-            groupBox4.Text = "API Keys";
+            textBox7.Location = new Point(31, 111);
+            textBox7.Name = "textBox7";
+            textBox7.Size = new Size(333, 23);
+            textBox7.TabIndex = 3;
             // 
-            // label11
+            // textBox6
             // 
-            label11.AutoSize = true;
-            label11.Location = new Point(31, 37);
-            label11.Name = "label11";
-            label11.Size = new Size(181, 15);
-            label11.TabIndex = 0;
-            label11.Text = "Ruta de Origen (Lectura de PDFs)";
+            textBox6.Location = new Point(31, 55);
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(333, 23);
+            textBox6.TabIndex = 2;
             // 
             // label12
             // 
@@ -375,45 +418,14 @@
             label12.TabIndex = 1;
             label12.Text = "Ruta de Destino (Escritura de PDFs)";
             // 
-            // textBox6
+            // label11
             // 
-            textBox6.Location = new Point(31, 55);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(333, 23);
-            textBox6.TabIndex = 2;
-            // 
-            // textBox7
-            // 
-            textBox7.Location = new Point(31, 111);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(333, 23);
-            textBox7.TabIndex = 3;
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Location = new Point(31, 34);
-            label13.Name = "label13";
-            label13.Size = new Size(105, 15);
-            label13.TabIndex = 0;
-            label13.Text = "API Key de RENIEC";
-            // 
-            // textBox8
-            // 
-            textBox8.Location = new Point(31, 52);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(333, 23);
-            textBox8.TabIndex = 1;
-            textBox8.Text = "**********";
-            // 
-            // button3
-            // 
-            button3.Location = new Point(270, 367);
-            button3.Name = "button3";
-            button3.Size = new Size(225, 23);
-            button3.TabIndex = 2;
-            button3.Text = "Guardar Configuración";
-            button3.UseVisualStyleBackColor = true;
+            label11.AutoSize = true;
+            label11.Location = new Point(31, 37);
+            label11.Name = "label11";
+            label11.Size = new Size(181, 15);
+            label11.TabIndex = 0;
+            label11.Text = "Ruta de Origen (Lectura de PDFs)";
             // 
             // MainForm
             // 
@@ -427,17 +439,17 @@
             Tab_Generar.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)txtMonto).EndInit();
             Tab_Listar.ResumeLayout(false);
             Tab_Listar.PerformLayout();
-            Tab_Configuracion.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            groupBox3.ResumeLayout(false);
-            groupBox3.PerformLayout();
+            Tab_Configuracion.ResumeLayout(false);
             groupBox4.ResumeLayout(false);
             groupBox4.PerformLayout();
+            groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -448,23 +460,23 @@
         private TabPage Tab_Listar;
         private TabPage Tab_Configuracion;
         private GroupBox groupBox1;
-        private NumericUpDown numericUpDown1;
-        private TextBox textBox4;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private NumericUpDown txtMonto;
+        private TextBox txtNombres;
+        private TextBox txtConcepto;
+        private TextBox txtApellidos;
+        private TextBox txtDni;
         private Label label4;
         private Label label2;
         private Label label1;
         private Label label6;
         private Label label5;
-        private Button button1;
+        private Button btnBuscar;
         private Label label3;
         private Label label7;
         private DataGridView dataGridView1;
         private GroupBox groupBox2;
-        private Button button2;
-        private TextBox textBox5;
+        private Button btnListar;
+        private TextBox txtDniBusqueda;
         private Label label8;
         private Label label10;
         private Label label9;
@@ -480,5 +492,6 @@
         private Label label12;
         private Label label11;
         private Button button3;
+        private Button btnGuardar;
     }
 }

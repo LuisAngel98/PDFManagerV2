@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36212.18 d17.14
+VisualStudioVersion = 17.14.36212.18
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDFManagerV2.Desktop", "PDFManagerV2.Desktop\PDFManagerV2.Desktop.csproj", "{44F7B837-DA79-4880-AC91-E33F091D0FD5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDFManagerV2.Core", "PDFManagerV2.Core\PDFManagerV2.Core.csproj", "{61CD6E56-266F-4968-94B5-AF2A167E8045}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{44F7B837-DA79-4880-AC91-E33F091D0FD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44F7B837-DA79-4880-AC91-E33F091D0FD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44F7B837-DA79-4880-AC91-E33F091D0FD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61CD6E56-266F-4968-94B5-AF2A167E8045}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61CD6E56-266F-4968-94B5-AF2A167E8045}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61CD6E56-266F-4968-94B5-AF2A167E8045}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61CD6E56-266F-4968-94B5-AF2A167E8045}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
