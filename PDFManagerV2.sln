@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDFManagerV2.UseCases", "PD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDFManagerV2.Shared", "PDFManagerV2.Shared\PDFManagerV2.Shared.csproj", "{984BFC02-5F91-4A08-AAFC-0A16C8F93259}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDFManagerV2.Infrastructure", "PDFManagerV2.Infrastructure\PDFManagerV2.Infrastructure.csproj", "{D679C81F-9690-4AF5-9E49-885198207C1F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{984BFC02-5F91-4A08-AAFC-0A16C8F93259}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{984BFC02-5F91-4A08-AAFC-0A16C8F93259}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{984BFC02-5F91-4A08-AAFC-0A16C8F93259}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D679C81F-9690-4AF5-9E49-885198207C1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D679C81F-9690-4AF5-9E49-885198207C1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D679C81F-9690-4AF5-9E49-885198207C1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D679C81F-9690-4AF5-9E49-885198207C1F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

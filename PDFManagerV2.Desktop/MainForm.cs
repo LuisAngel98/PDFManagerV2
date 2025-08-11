@@ -1,14 +1,19 @@
+using MediatR;
 using PDFManagerV2.Core;
+using PDFManagerV2.UseCases.Recibos.Create;
+using System.Threading.Tasks;
 
 namespace PDFManagerV2.Desktop
 {
     public partial class MainForm : Form
     {
-        public MainForm()
+        private readonly IMediator _mediator;
+        public MainForm(IMediator mediator)
         {
+            _mediator = mediator;
             InitializeComponent();
         }
-        private void btnGuardar_Click(object sender, EventArgs e)
+        private async void btnGuardar_Click(object sender, EventArgs e)
         {
             var dni = txtDni.Text;
             var nombres = txtNombres.Text;
@@ -28,13 +33,37 @@ namespace PDFManagerV2.Desktop
                 FechaEmision = DateTime.Now.ToString("dd/MM/yyyy"),
                 Cliente = client
             };
-            MessageBox.Show($"Recibo guardado:\n\n" +
-                $"Código: {Recibo.Codigo}\n" +
-                $"Monto: {Recibo.Monto}\n" +
-                $"Concepto: {Recibo.Concepto}\n" +
-                $"Fecha de Emisión: {Recibo.FechaEmision}\n" +
-                $"Cliente: {Recibo.Cliente.Nombres} {Recibo.Cliente.Apellidos} (DNI: {Recibo.Cliente.Dni})",
-                "Información del Recibo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            var command = new CreateReciboCommand(string.IsNullOrEmpty(dni) ? "00000000" : dni,
+                                                  string.IsNullOrEmpty(nombres) ? "N/A" : nombres,
+                                                  string.IsNullOrEmpty(apellidos) ? "N/A" : apellidos,
+                                                  string.IsNullOrEmpty(monto) ? "0.00" : monto,
+                                                  string.IsNullOrEmpty(concepto) ? "Sin concepto" : concepto);
+            var result = await _mediator.Send(command);
+            if (result.IsFailure)
+            {
+                MessageBox.Show($"Error al generar el documento: {result.Errors}");
+                return;
+            }
+            var dialogResult = MessageBox.Show("Recibo guardado exitosamente, ¿desea abrir el documento?", 
+                                                "Abrir Documento", 
+                                                MessageBoxButtons.YesNo, 
+                                                MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                // Abrir documento con el visor de PDF predeterminado del sistema
+                try
+                {
+                    System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                    {
+                        FileName = result.Value,
+                        UseShellExecute = true
+                    });
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al abrir el documento: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }

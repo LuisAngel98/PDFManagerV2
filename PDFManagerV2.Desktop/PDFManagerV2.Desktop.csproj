@@ -14,7 +14,14 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PDFManagerV2.Core\PDFManagerV2.Core.csproj" />
+    <ProjectReference Include="..\PDFManagerV2.Infrastructure\PDFManagerV2.Infrastructure.csproj" />
     <ProjectReference Include="..\PDFManagerV2.UseCases\PDFManagerV2.UseCases.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

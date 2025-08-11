@@ -1,6 +1,9 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using PDFManagerV2.Infrastructure.Pdf;
+using PDFManagerV2.UseCases.Recibos.Create;
 using PDFManagerV2.UseCases.Recibos.Interfaces;
+
 namespace PDFManagerV2.Desktop
 {
     internal static class Program
@@ -24,6 +27,11 @@ namespace PDFManagerV2.Desktop
                 {
                     services.AddTransient<MainForm>();
                     services.AddTransient<IFileStorageService, LocalStorageService>();
+                    services.AddMediatR(cfg =>
+                    {
+                        cfg.RegisterServicesFromAssembly(typeof(CreateReciboHandler).Assembly);
+                    });
+                    services.AddSingleton<IAppSettings, AppSettings>();
                 });
     }
 }
