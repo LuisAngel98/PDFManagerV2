@@ -18,7 +18,7 @@ namespace PDFManagerV2.UseCases.Recibos.Create
             {
                 Monto = request.Monto,
                 Concepto = request.Concepto,
-                FechaEmision = DateTime.Now.ToString("dd/MM/yyyy"),
+                FechaEmision = DateTime.Now,
                 Cliente = new Cliente
                 {
                     Dni = request.Dni,

@@ -196,7 +196,9 @@
             // 
             // txtMonto
             // 
+            txtMonto.DecimalPlaces = 2;
             txtMonto.Location = new Point(50, 250);
+            txtMonto.Maximum = new decimal(new int[] { 9999, 0, 0, 0 });
             txtMonto.Name = "txtMonto";
             txtMonto.Size = new Size(120, 23);
             txtMonto.TabIndex = 5;

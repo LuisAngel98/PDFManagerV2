@@ -1,7 +1,5 @@
 using MediatR;
-using PDFManagerV2.Core;
 using PDFManagerV2.UseCases.Recibos.Create;
-using System.Threading.Tasks;
 
 namespace PDFManagerV2.Desktop
 {
@@ -18,25 +16,12 @@ namespace PDFManagerV2.Desktop
             var dni = txtDni.Text;
             var nombres = txtNombres.Text;
             var apellidos = txtApellidos.Text;
-            var monto = txtMonto.Text;
+            var monto = txtMonto.Value;
             var concepto = txtConcepto.Text;
-            var client = new Cliente
-            {
-                Dni = dni,
-                Nombres = nombres,
-                Apellidos = apellidos
-            };
-            var Recibo = new Recibo
-            {
-                Monto = monto,
-                Concepto = concepto,
-                FechaEmision = DateTime.Now.ToString("dd/MM/yyyy"),
-                Cliente = client
-            };
             var command = new CreateReciboCommand(string.IsNullOrEmpty(dni) ? "00000000" : dni,
                                                   string.IsNullOrEmpty(nombres) ? "N/A" : nombres,
                                                   string.IsNullOrEmpty(apellidos) ? "N/A" : apellidos,
-                                                  string.IsNullOrEmpty(monto) ? "0.00" : monto,
+                                                  monto,
                                                   string.IsNullOrEmpty(concepto) ? "Sin concepto" : concepto);
             var result = await _mediator.Send(command);
             if (result.IsFailure)
@@ -44,9 +29,9 @@ namespace PDFManagerV2.Desktop
                 MessageBox.Show($"Error al generar el documento: {result.Errors}");
                 return;
             }
-            var dialogResult = MessageBox.Show("Recibo guardado exitosamente, ¿desea abrir el documento?", 
-                                                "Abrir Documento", 
-                                                MessageBoxButtons.YesNo, 
+            var dialogResult = MessageBox.Show("Recibo guardado exitosamente, ¿desea abrir el documento?",
+                                                "Abrir Documento",
+                                                MessageBoxButtons.YesNo,
                                                 MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {

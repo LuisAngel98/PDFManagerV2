@@ -65,7 +65,7 @@ namespace PDFManagerV2.Shared.Properties {
         /// </summary>
         public static byte[] template_recibo {
             get {
-                object obj = ResourceManager.GetObject("template-recibo", resourceCulture);
+                object obj = ResourceManager.GetObject("template_recibo", resourceCulture);
                 return ((byte[])(obj));
             }
         }

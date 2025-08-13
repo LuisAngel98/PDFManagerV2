@@ -41,8 +41,8 @@ namespace PDFManagerV2.Infrastructure.Pdf
 
                 SetIfExists("Concepto", recibo.Concepto);
                 SetIfExists("Dni", recibo.Cliente.Dni);
-                SetIfExists("Fecha", DateTime.Now.ToShortDateString());
-                SetIfExists("Monto", recibo.Monto);
+                SetIfExists("Fecha", recibo.FechaEmisionFormateada);
+                SetIfExists("Monto", recibo.MontoFormateado);
                 SetIfExists("RecibiDe", recibo.Cliente.Nombres + ", " + recibo.Cliente.Apellidos);
 
                 stamper.FormFlattening = true;
