@@ -32,15 +32,15 @@
             Tab_Generar = new TabPage();
             groupBox1 = new GroupBox();
             btnGuardar = new Button();
+            label6 = new Label();
+            txtNombres = new TextBox();
             label7 = new Label();
             label4 = new Label();
             txtConcepto = new TextBox();
             label3 = new Label();
-            label6 = new Label();
             label5 = new Label();
             btnBuscar = new Button();
             txtMonto = new NumericUpDown();
-            txtNombres = new TextBox();
             txtApellidos = new TextBox();
             txtDni = new TextBox();
             label2 = new Label();
@@ -103,15 +103,15 @@
             // groupBox1
             // 
             groupBox1.Controls.Add(btnGuardar);
+            groupBox1.Controls.Add(label6);
+            groupBox1.Controls.Add(txtNombres);
             groupBox1.Controls.Add(label7);
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(txtConcepto);
             groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(btnBuscar);
             groupBox1.Controls.Add(txtMonto);
-            groupBox1.Controls.Add(txtNombres);
             groupBox1.Controls.Add(txtApellidos);
             groupBox1.Controls.Add(txtDni);
             groupBox1.Controls.Add(label2);
@@ -132,6 +132,22 @@
             btnGuardar.Text = "Generar Recibo";
             btnGuardar.UseVisualStyleBackColor = true;
             btnGuardar.Click += btnGuardar_Click;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(45, 134);
+            label6.Name = "label6";
+            label6.Size = new Size(56, 15);
+            label6.TabIndex = 11;
+            label6.Text = "Nombres";
+            // 
+            // txtNombres
+            // 
+            txtNombres.Location = new Point(45, 160);
+            txtNombres.Name = "txtNombres";
+            txtNombres.Size = new Size(147, 23);
+            txtNombres.TabIndex = 3;
             // 
             // label7
             // 
@@ -167,19 +183,10 @@
             label3.TabIndex = 12;
             label3.Text = "Ingrese el DNI y presione buscar para completar automáticamente";
             // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(223, 134);
-            label6.Name = "label6";
-            label6.Size = new Size(56, 15);
-            label6.TabIndex = 11;
-            label6.Text = "Nombres";
-            // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(42, 134);
+            label5.Location = new Point(236, 134);
             label5.Name = "label5";
             label5.Size = new Size(56, 15);
             label5.TabIndex = 10;
@@ -203,19 +210,12 @@
             txtMonto.Size = new Size(120, 23);
             txtMonto.TabIndex = 5;
             // 
-            // txtNombres
-            // 
-            txtNombres.Location = new Point(223, 160);
-            txtNombres.Name = "txtNombres";
-            txtNombres.Size = new Size(147, 23);
-            txtNombres.TabIndex = 4;
-            // 
             // txtApellidos
             // 
-            txtApellidos.Location = new Point(42, 160);
+            txtApellidos.Location = new Point(236, 160);
             txtApellidos.Name = "txtApellidos";
             txtApellidos.Size = new Size(162, 23);
-            txtApellidos.TabIndex = 3;
+            txtApellidos.TabIndex = 4;
             // 
             // txtDni
             // 

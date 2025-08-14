@@ -15,7 +15,7 @@ namespace PDFManagerV2.Infrastructure.Pdf
         public async Task<Result<string>> SaveAsync(Recibo recibo)
         {
             var fileName = $"{recibo.Cliente.Dni}_{DateTime.Now:yyyyMMddHHmmss}.pdf";
-            byte[] pdfBytes = PDFManagerV2.Shared.Properties.Resources.template_recibo;
+            byte[] pdfBytes = Shared.Properties.Resources.template_recibo;
             string outputPath = _appSettings.PdfOutputPath;
             string fullFilePath = Path.Combine(outputPath, fileName);
 
@@ -44,6 +44,11 @@ namespace PDFManagerV2.Infrastructure.Pdf
                 SetIfExists("Fecha", recibo.FechaEmisionFormateada);
                 SetIfExists("Monto", recibo.MontoFormateado);
                 SetIfExists("RecibiDe", recibo.Cliente.Nombres + ", " + recibo.Cliente.Apellidos);
+
+                // 📌 Metadata PDF
+                var info = stamper.MoreInfo ?? new Dictionary<string, string>();
+                info["Author"] = $"{recibo.Cliente.Nombres} {recibo.Cliente.Apellidos}";
+                stamper.MoreInfo = info;
 
                 stamper.FormFlattening = true;
             }
