@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             btn_SaveConfig = new TabControl();
             Tab_Generar = new TabPage();
             groupBox1 = new GroupBox();
@@ -67,6 +67,8 @@
             txtApiKeyReniec = new TextBox();
             label13 = new Label();
             groupBox3 = new GroupBox();
+            btn_SeleccionarDestino = new Button();
+            btn_SeleccionarOrigen = new Button();
             txtDestino = new TextBox();
             txtoOrigen = new TextBox();
             label12 = new Label();
@@ -284,38 +286,38 @@
             dgvRecibos.AllowUserToAddRows = false;
             dgvRecibos.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dgvRecibos.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(224, 224, 224);
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvRecibos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(224, 224, 224);
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dgvRecibos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dgvRecibos.ColumnHeadersHeight = 36;
             dgvRecibos.Columns.AddRange(new DataGridViewColumn[] { Col_Cliente, Col_Codigo, Col_Fecha, Col_Open });
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(224, 224, 224);
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvRecibos.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = SystemColors.Window;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle6.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(224, 224, 224);
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            dgvRecibos.DefaultCellStyle = dataGridViewCellStyle6;
             dgvRecibos.EnableHeadersVisualStyles = false;
             dgvRecibos.Location = new Point(62, 149);
             dgvRecibos.Name = "dgvRecibos";
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = SystemColors.Control;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(224, 224, 224);
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvRecibos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = SystemColors.Control;
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle7.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(224, 224, 224);
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            dgvRecibos.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             dgvRecibos.RowHeadersVisible = false;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(224, 224, 224);
-            dataGridViewCellStyle4.SelectionForeColor = Color.Black;
-            dgvRecibos.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.SelectionBackColor = Color.FromArgb(224, 224, 224);
+            dataGridViewCellStyle8.SelectionForeColor = Color.Black;
+            dgvRecibos.RowsDefaultCellStyle = dataGridViewCellStyle8;
             dgvRecibos.RowTemplate.Height = 36;
             dgvRecibos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvRecibos.Size = new Size(650, 205);
@@ -443,6 +445,8 @@
             // 
             // groupBox3
             // 
+            groupBox3.Controls.Add(btn_SeleccionarDestino);
+            groupBox3.Controls.Add(btn_SeleccionarOrigen);
             groupBox3.Controls.Add(txtDestino);
             groupBox3.Controls.Add(txtoOrigen);
             groupBox3.Controls.Add(label12);
@@ -453,6 +457,26 @@
             groupBox3.TabIndex = 0;
             groupBox3.TabStop = false;
             groupBox3.Text = "Configuración de Archivos PDF";
+            // 
+            // btn_SeleccionarDestino
+            // 
+            btn_SeleccionarDestino.Location = new Point(417, 111);
+            btn_SeleccionarDestino.Name = "btn_SeleccionarDestino";
+            btn_SeleccionarDestino.Size = new Size(193, 23);
+            btn_SeleccionarDestino.TabIndex = 5;
+            btn_SeleccionarDestino.Text = "Seleccionar ruta";
+            btn_SeleccionarDestino.UseVisualStyleBackColor = true;
+            btn_SeleccionarDestino.Click += btn_SeleccionarDestino_Click;
+            // 
+            // btn_SeleccionarOrigen
+            // 
+            btn_SeleccionarOrigen.Location = new Point(417, 55);
+            btn_SeleccionarOrigen.Name = "btn_SeleccionarOrigen";
+            btn_SeleccionarOrigen.Size = new Size(193, 23);
+            btn_SeleccionarOrigen.TabIndex = 4;
+            btn_SeleccionarOrigen.Text = "Seleccionar ruta";
+            btn_SeleccionarOrigen.UseVisualStyleBackColor = true;
+            btn_SeleccionarOrigen.Click += btn_SeleccionarOrigen_Click;
             // 
             // txtDestino
             // 
@@ -554,5 +578,7 @@
         private DataGridViewTextBoxColumn Col_Codigo;
         private DataGridViewTextBoxColumn Col_Fecha;
         private DataGridViewImageColumn Col_Open;
+        private Button btn_SeleccionarDestino;
+        private Button btn_SeleccionarOrigen;
     }
 }

@@ -120,5 +120,35 @@ namespace PDFManagerV2.Desktop
             txtoOrigen.Text = _appSettings.PdfOutputPath;
             txtDestino.Text = _appSettings.PdfInputPath;
         }
+
+        private void btn_SeleccionarOrigen_Click(object sender, EventArgs e)
+        {
+            using var dialog = new FolderBrowserDialog
+            {
+                ShowNewFolderButton = true
+            };
+
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                string ruta = dialog.SelectedPath;
+                _appSettings.UpdateSetting("PdfInputPath", ruta);
+                txtoOrigen.Text = ruta;
+            }
+        }
+
+        private void btn_SeleccionarDestino_Click(object sender, EventArgs e)
+        {
+            using var dialog = new FolderBrowserDialog
+            {
+                ShowNewFolderButton = true
+            };
+
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                string ruta = dialog.SelectedPath;
+                _appSettings.UpdateSetting("PdfOutputPath", ruta);
+                txtDestino.Text = ruta;
+            }
+        }
     }
 }
