@@ -1,5 +1,6 @@
 using MediatR;
 using PDFManagerV2.UseCases.Recibos.Create;
+using PDFManagerV2.UseCases.Recibos.GetByDni;
 
 namespace PDFManagerV2.Desktop
 {
@@ -48,6 +49,28 @@ namespace PDFManagerV2.Desktop
                 {
                     MessageBox.Show($"Error al abrir el documento: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+        }
+
+        private async void btnListar_Click(object sender, EventArgs e)
+        {
+            var result = await _mediator.Send(new GetByDniQuery(txtDniBusqueda.Text));
+            if (result.IsSuccess)
+            {
+                dgvRecibos.Rows.Clear();
+
+                foreach (var recibo in result.Value)
+                {
+                    dgvRecibos.Rows.Add(
+                        $"{recibo.Cliente.Nombres} {recibo.Cliente.Apellidos}",
+                        $"{recibo.Cliente.Dni}-{recibo.FechaEmision.ToString("ddMMyyyy")}-{recibo.FechaEmision.ToString("HHmmss")}",
+                        recibo.FechaEmision.ToString("dd-MM-yyyy")
+                    );
+                }
+            }
+            else
+            {
+                MessageBox.Show(result.Errors.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

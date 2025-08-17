@@ -6,5 +6,6 @@ namespace PDFManagerV2.UseCases.Recibos.Interfaces
     public interface IFileStorageService
     {
         Task<Result<string>> SaveAsync(Recibo archivo);
+        Task<Result<List<Recibo>>> GetByDniAsync(string dni);
     }
 }

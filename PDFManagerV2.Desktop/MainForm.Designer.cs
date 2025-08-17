@@ -48,10 +48,11 @@
             Tab_Listar = new TabPage();
             label10 = new Label();
             label9 = new Label();
-            dataGridView1 = new DataGridView();
+            dgvRecibos = new DataGridView();
             Col_Cliente = new DataGridViewTextBoxColumn();
             Col_Codigo = new DataGridViewTextBoxColumn();
             Col_Fecha = new DataGridViewTextBoxColumn();
+            Col_Open = new DataGridViewTextBoxColumn();
             groupBox2 = new GroupBox();
             btnListar = new Button();
             txtDniBusqueda = new TextBox();
@@ -71,7 +72,7 @@
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)txtMonto).BeginInit();
             Tab_Listar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvRecibos).BeginInit();
             groupBox2.SuspendLayout();
             Tab_Configuracion.SuspendLayout();
             groupBox4.SuspendLayout();
@@ -246,7 +247,7 @@
             // 
             Tab_Listar.Controls.Add(label10);
             Tab_Listar.Controls.Add(label9);
-            Tab_Listar.Controls.Add(dataGridView1);
+            Tab_Listar.Controls.Add(dgvRecibos);
             Tab_Listar.Controls.Add(groupBox2);
             Tab_Listar.Location = new Point(4, 24);
             Tab_Listar.Name = "Tab_Listar";
@@ -274,14 +275,15 @@
             label9.TabIndex = 2;
             label9.Text = "Total Registros:";
             // 
-            // dataGridView1
+            // dgvRecibos
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Col_Cliente, Col_Codigo, Col_Fecha });
-            dataGridView1.Location = new Point(62, 149);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(649, 205);
-            dataGridView1.TabIndex = 1;
+            dgvRecibos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvRecibos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvRecibos.Columns.AddRange(new DataGridViewColumn[] { Col_Cliente, Col_Codigo, Col_Fecha, Col_Open });
+            dgvRecibos.Location = new Point(62, 149);
+            dgvRecibos.Name = "dgvRecibos";
+            dgvRecibos.Size = new Size(649, 205);
+            dgvRecibos.TabIndex = 1;
             // 
             // Col_Cliente
             // 
@@ -297,6 +299,11 @@
             // 
             Col_Fecha.HeaderText = "Fecha";
             Col_Fecha.Name = "Col_Fecha";
+            // 
+            // Col_Open
+            // 
+            Col_Open.HeaderText = "";
+            Col_Open.Name = "Col_Open";
             // 
             // groupBox2
             // 
@@ -318,6 +325,7 @@
             btnListar.TabIndex = 2;
             btnListar.Text = "Listar";
             btnListar.UseVisualStyleBackColor = true;
+            btnListar.Click += btnListar_Click;
             // 
             // txtDniBusqueda
             // 
@@ -444,7 +452,7 @@
             ((System.ComponentModel.ISupportInitialize)txtMonto).EndInit();
             Tab_Listar.ResumeLayout(false);
             Tab_Listar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvRecibos).EndInit();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             Tab_Configuracion.ResumeLayout(false);
@@ -475,7 +483,7 @@
         private Button btnBuscar;
         private Label label3;
         private Label label7;
-        private DataGridView dataGridView1;
+        private DataGridView dgvRecibos;
         private GroupBox groupBox2;
         private Button btnListar;
         private TextBox txtDniBusqueda;
@@ -495,5 +503,6 @@
         private Label label11;
         private Button button3;
         private Button btnGuardar;
+        private DataGridViewTextBoxColumn Col_Open;
     }
 }
