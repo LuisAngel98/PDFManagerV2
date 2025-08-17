@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             tabControl1 = new TabControl();
             Tab_Generar = new TabPage();
             groupBox1 = new GroupBox();
@@ -52,7 +56,7 @@
             Col_Cliente = new DataGridViewTextBoxColumn();
             Col_Codigo = new DataGridViewTextBoxColumn();
             Col_Fecha = new DataGridViewTextBoxColumn();
-            Col_Open = new DataGridViewTextBoxColumn();
+            Col_Open = new DataGridViewImageColumn();
             groupBox2 = new GroupBox();
             btnListar = new Button();
             txtDniBusqueda = new TextBox();
@@ -277,33 +281,77 @@
             // 
             // dgvRecibos
             // 
-            dgvRecibos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvRecibos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvRecibos.AllowUserToAddRows = false;
+            dgvRecibos.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            dgvRecibos.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(224, 224, 224);
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvRecibos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvRecibos.ColumnHeadersHeight = 36;
             dgvRecibos.Columns.AddRange(new DataGridViewColumn[] { Col_Cliente, Col_Codigo, Col_Fecha, Col_Open });
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(224, 224, 224);
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvRecibos.DefaultCellStyle = dataGridViewCellStyle2;
+            dgvRecibos.EnableHeadersVisualStyles = false;
             dgvRecibos.Location = new Point(62, 149);
             dgvRecibos.Name = "dgvRecibos";
-            dgvRecibos.Size = new Size(649, 205);
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(224, 224, 224);
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvRecibos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dgvRecibos.RowHeadersVisible = false;
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(224, 224, 224);
+            dataGridViewCellStyle4.SelectionForeColor = Color.Black;
+            dgvRecibos.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dgvRecibos.RowTemplate.Height = 36;
+            dgvRecibos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvRecibos.Size = new Size(650, 205);
             dgvRecibos.TabIndex = 1;
+            dgvRecibos.CellContentClick += dgvRecibos_CellContentClick;
             // 
             // Col_Cliente
             // 
+            Col_Cliente.FillWeight = 158.748154F;
             Col_Cliente.HeaderText = "Cliente";
             Col_Cliente.Name = "Col_Cliente";
+            Col_Cliente.Width = 165;
             // 
             // Col_Codigo
             // 
+            Col_Codigo.FillWeight = 101.52282F;
             Col_Codigo.HeaderText = "Codigo";
             Col_Codigo.Name = "Col_Codigo";
+            Col_Codigo.Width = 215;
             // 
             // Col_Fecha
             // 
+            Col_Fecha.FillWeight = 80.30393F;
             Col_Fecha.HeaderText = "Fecha";
             Col_Fecha.Name = "Col_Fecha";
+            Col_Fecha.Width = 165;
             // 
             // Col_Open
             // 
+            Col_Open.FillWeight = 59.42503F;
             Col_Open.HeaderText = "";
+            Col_Open.Image = Properties.Resources.icon_pdf;
             Col_Open.Name = "Col_Open";
+            Col_Open.Resizable = DataGridViewTriState.True;
+            Col_Open.SortMode = DataGridViewColumnSortMode.Automatic;
+            Col_Open.Width = 110;
             // 
             // groupBox2
             // 
@@ -490,9 +538,6 @@
         private Label label8;
         private Label label10;
         private Label label9;
-        private DataGridViewTextBoxColumn Col_Cliente;
-        private DataGridViewTextBoxColumn Col_Codigo;
-        private DataGridViewTextBoxColumn Col_Fecha;
         private GroupBox groupBox4;
         private GroupBox groupBox3;
         private TextBox textBox8;
@@ -503,6 +548,9 @@
         private Label label11;
         private Button button3;
         private Button btnGuardar;
-        private DataGridViewTextBoxColumn Col_Open;
+        private DataGridViewTextBoxColumn Col_Cliente;
+        private DataGridViewTextBoxColumn Col_Codigo;
+        private DataGridViewTextBoxColumn Col_Fecha;
+        private DataGridViewImageColumn Col_Open;
     }
 }

@@ -44,7 +44,7 @@ namespace PDFManagerV2.Infrastructure.Pdf
 
                     if (!DateTime.TryParseExact(
                             fechaPart + horaPart,
-                            "yyyyMMddHHmmss",
+                            "ddMMyyyyHHmmss",
                             CultureInfo.InvariantCulture,
                             DateTimeStyles.None,
                             out DateTime fechaEmision))
@@ -75,7 +75,7 @@ namespace PDFManagerV2.Infrastructure.Pdf
 
         public async Task<Result<string>> SaveAsync(Recibo recibo)
         {
-            var fileName = $"{recibo.Cliente.Dni}-{DateTime.Now:yyyyMMdd}-{DateTime.Now:HHmmss}.pdf";
+            var fileName = $"{recibo.Cliente.Dni}-{DateTime.Now:ddMMyyyy}-{DateTime.Now:HHmmss}.pdf";
             byte[] pdfBytes = Shared.Properties.Resources.template_recibo;
             string outputPath = _appSettings.PdfOutputPath;
             string fullFilePath = Path.Combine(outputPath, fileName);

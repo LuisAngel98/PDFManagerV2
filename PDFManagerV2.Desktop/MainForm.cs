@@ -1,15 +1,19 @@
 using MediatR;
 using PDFManagerV2.UseCases.Recibos.Create;
 using PDFManagerV2.UseCases.Recibos.GetByDni;
+using PDFManagerV2.UseCases.Recibos.Interfaces;
+using System.Windows.Forms;
 
 namespace PDFManagerV2.Desktop
 {
     public partial class MainForm : Form
     {
         private readonly IMediator _mediator;
-        public MainForm(IMediator mediator)
+        private readonly IAppSettings _appSettings;
+        public MainForm(IMediator mediator, IAppSettings appSettings)
         {
             _mediator = mediator;
+            _appSettings = appSettings;
             InitializeComponent();
         }
         private async void btnGuardar_Click(object sender, EventArgs e)
@@ -71,6 +75,36 @@ namespace PDFManagerV2.Desktop
             else
             {
                 MessageBox.Show(result.Errors.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dgvRecibos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Verifica que hizo click en la columna de la imagen
+            if (dgvRecibos.Columns[e.ColumnIndex].Name == "Col_Open" && e.RowIndex >= 0)
+            {
+                // Obtiene el código de la otra columna
+                string codigo = dgvRecibos.Rows[e.RowIndex].Cells["Col_Codigo"].Value?.ToString();
+
+                if (!string.IsNullOrEmpty(codigo))
+                {
+                    // Construye la ruta del archivo
+                    string rutaPdf = Path.Combine(_appSettings.PdfInputPath, codigo + ".pdf");
+
+                    if (File.Exists(rutaPdf))
+                    {
+                        // Abre el PDF con el programa predeterminado
+                        System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo()
+                        {
+                            FileName = rutaPdf,
+                            UseShellExecute = true
+                        });
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se encontró el archivo: " + rutaPdf);
+                    }
+                }
             }
         }
     }
