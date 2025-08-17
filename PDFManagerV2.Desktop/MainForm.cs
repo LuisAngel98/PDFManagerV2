@@ -107,5 +107,18 @@ namespace PDFManagerV2.Desktop
                 }
             }
         }
+
+        private void btn_GuardarConfig_Click(object sender, EventArgs e)
+        {
+            _appSettings.UpdateSetting("PdfOutputPath", txtoOrigen.Text);
+            _appSettings.UpdateSetting("PdfInputPath", txtDestino.Text);
+            MessageBox.Show($"{_appSettings.PdfOutputPath}-{_appSettings.PdfInputPath}", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            txtoOrigen.Text = _appSettings.PdfOutputPath;
+            txtDestino.Text = _appSettings.PdfInputPath;
+        }
     }
 }

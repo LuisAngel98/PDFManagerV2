@@ -32,7 +32,7 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            tabControl1 = new TabControl();
+            btn_SaveConfig = new TabControl();
             Tab_Generar = new TabPage();
             groupBox1 = new GroupBox();
             btnGuardar = new Button();
@@ -62,16 +62,16 @@
             txtDniBusqueda = new TextBox();
             label8 = new Label();
             Tab_Configuracion = new TabPage();
-            button3 = new Button();
+            btn_GuardarConfig = new Button();
             groupBox4 = new GroupBox();
-            textBox8 = new TextBox();
+            txtApiKeyReniec = new TextBox();
             label13 = new Label();
             groupBox3 = new GroupBox();
-            textBox7 = new TextBox();
-            textBox6 = new TextBox();
+            txtDestino = new TextBox();
+            txtoOrigen = new TextBox();
             label12 = new Label();
             label11 = new Label();
-            tabControl1.SuspendLayout();
+            btn_SaveConfig.SuspendLayout();
             Tab_Generar.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)txtMonto).BeginInit();
@@ -83,16 +83,16 @@
             groupBox3.SuspendLayout();
             SuspendLayout();
             // 
-            // tabControl1
+            // btn_SaveConfig
             // 
-            tabControl1.Controls.Add(Tab_Generar);
-            tabControl1.Controls.Add(Tab_Listar);
-            tabControl1.Controls.Add(Tab_Configuracion);
-            tabControl1.Location = new Point(3, 3);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(792, 445);
-            tabControl1.TabIndex = 0;
+            btn_SaveConfig.Controls.Add(Tab_Generar);
+            btn_SaveConfig.Controls.Add(Tab_Listar);
+            btn_SaveConfig.Controls.Add(Tab_Configuracion);
+            btn_SaveConfig.Location = new Point(3, 3);
+            btn_SaveConfig.Name = "btn_SaveConfig";
+            btn_SaveConfig.SelectedIndex = 0;
+            btn_SaveConfig.Size = new Size(792, 445);
+            btn_SaveConfig.TabIndex = 0;
             // 
             // Tab_Generar
             // 
@@ -393,7 +393,7 @@
             // 
             // Tab_Configuracion
             // 
-            Tab_Configuracion.Controls.Add(button3);
+            Tab_Configuracion.Controls.Add(btn_GuardarConfig);
             Tab_Configuracion.Controls.Add(groupBox4);
             Tab_Configuracion.Controls.Add(groupBox3);
             Tab_Configuracion.Location = new Point(4, 24);
@@ -403,18 +403,19 @@
             Tab_Configuracion.Text = "CONFIGURACION";
             Tab_Configuracion.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btn_GuardarConfig
             // 
-            button3.Location = new Point(270, 367);
-            button3.Name = "button3";
-            button3.Size = new Size(225, 23);
-            button3.TabIndex = 2;
-            button3.Text = "Guardar Configuración";
-            button3.UseVisualStyleBackColor = true;
+            btn_GuardarConfig.Location = new Point(270, 367);
+            btn_GuardarConfig.Name = "btn_GuardarConfig";
+            btn_GuardarConfig.Size = new Size(225, 23);
+            btn_GuardarConfig.TabIndex = 2;
+            btn_GuardarConfig.Text = "Guardar Configuración";
+            btn_GuardarConfig.UseVisualStyleBackColor = true;
+            btn_GuardarConfig.Click += btn_GuardarConfig_Click;
             // 
             // groupBox4
             // 
-            groupBox4.Controls.Add(textBox8);
+            groupBox4.Controls.Add(txtApiKeyReniec);
             groupBox4.Controls.Add(label13);
             groupBox4.Location = new Point(49, 252);
             groupBox4.Name = "groupBox4";
@@ -423,13 +424,13 @@
             groupBox4.TabStop = false;
             groupBox4.Text = "API Keys";
             // 
-            // textBox8
+            // txtApiKeyReniec
             // 
-            textBox8.Location = new Point(31, 52);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(333, 23);
-            textBox8.TabIndex = 1;
-            textBox8.Text = "**********";
+            txtApiKeyReniec.Location = new Point(31, 52);
+            txtApiKeyReniec.Name = "txtApiKeyReniec";
+            txtApiKeyReniec.Size = new Size(333, 23);
+            txtApiKeyReniec.TabIndex = 1;
+            txtApiKeyReniec.Text = "**********";
             // 
             // label13
             // 
@@ -442,8 +443,8 @@
             // 
             // groupBox3
             // 
-            groupBox3.Controls.Add(textBox7);
-            groupBox3.Controls.Add(textBox6);
+            groupBox3.Controls.Add(txtDestino);
+            groupBox3.Controls.Add(txtoOrigen);
             groupBox3.Controls.Add(label12);
             groupBox3.Controls.Add(label11);
             groupBox3.Location = new Point(49, 40);
@@ -453,19 +454,19 @@
             groupBox3.TabStop = false;
             groupBox3.Text = "Configuración de Archivos PDF";
             // 
-            // textBox7
+            // txtDestino
             // 
-            textBox7.Location = new Point(31, 111);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(333, 23);
-            textBox7.TabIndex = 3;
+            txtDestino.Location = new Point(31, 111);
+            txtDestino.Name = "txtDestino";
+            txtDestino.Size = new Size(333, 23);
+            txtDestino.TabIndex = 3;
             // 
-            // textBox6
+            // txtoOrigen
             // 
-            textBox6.Location = new Point(31, 55);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(333, 23);
-            textBox6.TabIndex = 2;
+            txtoOrigen.Location = new Point(31, 55);
+            txtoOrigen.Name = "txtoOrigen";
+            txtoOrigen.Size = new Size(333, 23);
+            txtoOrigen.TabIndex = 2;
             // 
             // label12
             // 
@@ -490,10 +491,11 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(tabControl1);
+            Controls.Add(btn_SaveConfig);
             Name = "MainForm";
             Text = "PDFManager";
-            tabControl1.ResumeLayout(false);
+            Load += MainForm_Load;
+            btn_SaveConfig.ResumeLayout(false);
             Tab_Generar.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
@@ -513,7 +515,7 @@
 
         #endregion
 
-        private TabControl tabControl1;
+        private TabControl btn_SaveConfig;
         private TabPage Tab_Generar;
         private TabPage Tab_Listar;
         private TabPage Tab_Configuracion;
@@ -540,13 +542,13 @@
         private Label label9;
         private GroupBox groupBox4;
         private GroupBox groupBox3;
-        private TextBox textBox8;
+        private TextBox txtApiKeyReniec;
         private Label label13;
-        private TextBox textBox7;
-        private TextBox textBox6;
+        private TextBox txtDestino;
+        private TextBox txtoOrigen;
         private Label label12;
         private Label label11;
-        private Button button3;
+        private Button btn_GuardarConfig;
         private Button btnGuardar;
         private DataGridViewTextBoxColumn Col_Cliente;
         private DataGridViewTextBoxColumn Col_Codigo;

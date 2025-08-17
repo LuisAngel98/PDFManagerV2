@@ -4,5 +4,6 @@
     {
         string PdfOutputPath { get; }
         string PdfInputPath { get; }
+        void UpdateSetting(string key, string value);
     }
 }
