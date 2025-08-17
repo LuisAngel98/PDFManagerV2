@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             btn_SaveConfig = new TabControl();
             Tab_Generar = new TabPage();
             groupBox1 = new GroupBox();
@@ -92,17 +92,18 @@
             btn_SaveConfig.Controls.Add(Tab_Configuracion);
             btn_SaveConfig.Location = new Point(3, 3);
             btn_SaveConfig.Name = "btn_SaveConfig";
+            btn_SaveConfig.Padding = new Point(16, 8);
             btn_SaveConfig.SelectedIndex = 0;
-            btn_SaveConfig.Size = new Size(792, 445);
+            btn_SaveConfig.Size = new Size(798, 529);
             btn_SaveConfig.TabIndex = 0;
             // 
             // Tab_Generar
             // 
             Tab_Generar.Controls.Add(groupBox1);
-            Tab_Generar.Location = new Point(4, 24);
+            Tab_Generar.Location = new Point(4, 34);
             Tab_Generar.Name = "Tab_Generar";
             Tab_Generar.Padding = new Padding(3);
-            Tab_Generar.Size = new Size(784, 417);
+            Tab_Generar.Size = new Size(790, 491);
             Tab_Generar.TabIndex = 0;
             Tab_Generar.Text = "GENERAR";
             Tab_Generar.UseVisualStyleBackColor = true;
@@ -123,68 +124,88 @@
             groupBox1.Controls.Add(txtDni);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
-            groupBox1.Location = new Point(201, 18);
+            groupBox1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            groupBox1.ForeColor = Color.FromArgb(192, 0, 0);
+            groupBox1.Location = new Point(80, 18);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(432, 393);
+            groupBox1.Size = new Size(638, 447);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Registro";
             // 
             // btnGuardar
             // 
-            btnGuardar.Location = new Point(72, 350);
+            btnGuardar.BackColor = Color.SlateGray;
+            btnGuardar.FlatAppearance.BorderColor = Color.FromArgb(192, 0, 0);
+            btnGuardar.FlatAppearance.BorderSize = 0;
+            btnGuardar.FlatStyle = FlatStyle.Flat;
+            btnGuardar.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnGuardar.ForeColor = Color.White;
+            btnGuardar.Location = new Point(194, 404);
             btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(284, 23);
+            btnGuardar.Size = new Size(284, 32);
             btnGuardar.TabIndex = 7;
             btnGuardar.Text = "Generar Recibo";
-            btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.UseVisualStyleBackColor = false;
             btnGuardar.Click += btnGuardar_Click;
             // 
             // label6
             // 
             label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 12F);
+            label6.ForeColor = Color.Black;
             label6.Location = new Point(45, 134);
             label6.Name = "label6";
-            label6.Size = new Size(56, 15);
+            label6.Size = new Size(75, 21);
             label6.TabIndex = 11;
             label6.Text = "Nombres";
             // 
             // txtNombres
             // 
+            txtNombres.Font = new Font("Segoe UI", 12F);
+            txtNombres.ForeColor = Color.Black;
             txtNombres.Location = new Point(45, 160);
             txtNombres.Name = "txtNombres";
-            txtNombres.Size = new Size(147, 23);
+            txtNombres.Size = new Size(250, 29);
             txtNombres.TabIndex = 3;
             // 
             // label7
             // 
             label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.Black;
             label7.Location = new Point(45, 202);
             label7.Name = "label7";
-            label7.Size = new Size(92, 15);
+            label7.Size = new Size(122, 21);
             label7.TabIndex = 13;
             label7.Text = "Datos del recibo";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(50, 287);
+            label4.Font = new Font("Segoe UI", 12F);
+            label4.ForeColor = Color.Black;
+            label4.Location = new Point(45, 304);
             label4.Name = "label4";
-            label4.Size = new Size(97, 15);
+            label4.Size = new Size(124, 21);
             label4.TabIndex = 3;
             label4.Text = "Por concepto de:";
             // 
             // txtConcepto
             // 
-            txtConcepto.Location = new Point(50, 305);
+            txtConcepto.Font = new Font("Segoe UI", 12F);
+            txtConcepto.ForeColor = Color.Black;
+            txtConcepto.Location = new Point(45, 330);
             txtConcepto.Name = "txtConcepto";
-            txtConcepto.Size = new Size(306, 23);
+            txtConcepto.Size = new Size(529, 29);
             txtConcepto.TabIndex = 6;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(43, 100);
+            label3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.Black;
+            label3.Location = new Point(45, 106);
             label3.Name = "label3";
             label3.Size = new Size(355, 15);
             label3.TabIndex = 12;
@@ -193,17 +214,20 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(236, 134);
+            label5.Font = new Font("Segoe UI", 12F);
+            label5.ForeColor = Color.Black;
+            label5.Location = new Point(324, 134);
             label5.Name = "label5";
-            label5.Size = new Size(56, 15);
+            label5.Size = new Size(74, 21);
             label5.TabIndex = 10;
             label5.Text = "Apellidos";
             // 
             // btnBuscar
             // 
-            btnBuscar.Location = new Point(295, 74);
+            btnBuscar.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnBuscar.Location = new Point(324, 71);
             btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(98, 23);
+            btnBuscar.Size = new Size(130, 32);
             btnBuscar.TabIndex = 2;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = true;
@@ -211,41 +235,51 @@
             // txtMonto
             // 
             txtMonto.DecimalPlaces = 2;
-            txtMonto.Location = new Point(50, 250);
+            txtMonto.Font = new Font("Segoe UI", 12F);
+            txtMonto.ForeColor = Color.Black;
+            txtMonto.Location = new Point(45, 260);
             txtMonto.Maximum = new decimal(new int[] { 9999, 0, 0, 0 });
             txtMonto.Name = "txtMonto";
-            txtMonto.Size = new Size(120, 23);
+            txtMonto.Size = new Size(250, 29);
             txtMonto.TabIndex = 5;
             // 
             // txtApellidos
             // 
-            txtApellidos.Location = new Point(236, 160);
+            txtApellidos.Font = new Font("Segoe UI", 12F);
+            txtApellidos.ForeColor = Color.Black;
+            txtApellidos.Location = new Point(324, 160);
             txtApellidos.Name = "txtApellidos";
-            txtApellidos.Size = new Size(162, 23);
+            txtApellidos.Size = new Size(250, 29);
             txtApellidos.TabIndex = 4;
             // 
             // txtDni
             // 
-            txtDni.Location = new Point(42, 74);
+            txtDni.Font = new Font("Segoe UI", 12F);
+            txtDni.ForeColor = Color.Black;
+            txtDni.Location = new Point(45, 71);
             txtDni.Name = "txtDni";
-            txtDni.Size = new Size(237, 23);
+            txtDni.Size = new Size(250, 29);
             txtDni.TabIndex = 1;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(45, 232);
+            label2.Font = new Font("Segoe UI", 12F);
+            label2.ForeColor = Color.Black;
+            label2.Location = new Point(45, 234);
             label2.Name = "label2";
-            label2.Size = new Size(87, 15);
+            label2.Size = new Size(113, 21);
             label2.TabIndex = 1;
             label2.Text = "La cantidad de:";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(42, 47);
+            label1.Font = new Font("Segoe UI", 12F);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(45, 46);
             label1.Name = "label1";
-            label1.Size = new Size(30, 15);
+            label1.Size = new Size(40, 21);
             label1.TabIndex = 0;
             label1.Text = "DNI:";
             // 
@@ -255,10 +289,10 @@
             Tab_Listar.Controls.Add(label9);
             Tab_Listar.Controls.Add(dgvRecibos);
             Tab_Listar.Controls.Add(groupBox2);
-            Tab_Listar.Location = new Point(4, 24);
+            Tab_Listar.Location = new Point(4, 34);
             Tab_Listar.Name = "Tab_Listar";
             Tab_Listar.Padding = new Padding(3);
-            Tab_Listar.Size = new Size(784, 417);
+            Tab_Listar.Size = new Size(790, 491);
             Tab_Listar.TabIndex = 1;
             Tab_Listar.Text = "LISTAR";
             Tab_Listar.UseVisualStyleBackColor = true;
@@ -286,41 +320,42 @@
             dgvRecibos.AllowUserToAddRows = false;
             dgvRecibos.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dgvRecibos.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(224, 224, 224);
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dgvRecibos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvRecibos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvRecibos.ColumnHeadersHeight = 36;
             dgvRecibos.Columns.AddRange(new DataGridViewColumn[] { Col_Cliente, Col_Codigo, Col_Fecha, Col_Open });
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = SystemColors.Window;
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle6.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(224, 224, 224);
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            dgvRecibos.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(224, 224, 224);
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvRecibos.DefaultCellStyle = dataGridViewCellStyle2;
             dgvRecibos.EnableHeadersVisualStyles = false;
-            dgvRecibos.Location = new Point(62, 149);
+            dgvRecibos.Location = new Point(22, 152);
             dgvRecibos.Name = "dgvRecibos";
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = SystemColors.Control;
-            dataGridViewCellStyle7.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle7.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(224, 224, 224);
-            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            dgvRecibos.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(224, 224, 224);
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvRecibos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvRecibos.RowHeadersVisible = false;
-            dataGridViewCellStyle8.SelectionBackColor = Color.FromArgb(224, 224, 224);
-            dataGridViewCellStyle8.SelectionForeColor = Color.Black;
-            dgvRecibos.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(224, 224, 224);
+            dataGridViewCellStyle4.SelectionForeColor = Color.Black;
+            dgvRecibos.RowsDefaultCellStyle = dataGridViewCellStyle4;
             dgvRecibos.RowTemplate.Height = 36;
             dgvRecibos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvRecibos.Size = new Size(650, 205);
+            dgvRecibos.Size = new Size(742, 205);
             dgvRecibos.TabIndex = 1;
             dgvRecibos.CellContentClick += dgvRecibos_CellContentClick;
             // 
@@ -329,21 +364,21 @@
             Col_Cliente.FillWeight = 158.748154F;
             Col_Cliente.HeaderText = "Cliente";
             Col_Cliente.Name = "Col_Cliente";
-            Col_Cliente.Width = 165;
+            Col_Cliente.Width = 200;
             // 
             // Col_Codigo
             // 
             Col_Codigo.FillWeight = 101.52282F;
             Col_Codigo.HeaderText = "Codigo";
             Col_Codigo.Name = "Col_Codigo";
-            Col_Codigo.Width = 215;
+            Col_Codigo.Width = 230;
             // 
             // Col_Fecha
             // 
             Col_Fecha.FillWeight = 80.30393F;
             Col_Fecha.HeaderText = "Fecha";
             Col_Fecha.Name = "Col_Fecha";
-            Col_Fecha.Width = 165;
+            Col_Fecha.Width = 200;
             // 
             // Col_Open
             // 
@@ -360,7 +395,9 @@
             groupBox2.Controls.Add(btnListar);
             groupBox2.Controls.Add(txtDniBusqueda);
             groupBox2.Controls.Add(label8);
-            groupBox2.Location = new Point(62, 27);
+            groupBox2.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            groupBox2.ForeColor = Color.FromArgb(192, 0, 0);
+            groupBox2.Location = new Point(80, 27);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(649, 100);
             groupBox2.TabIndex = 0;
@@ -369,9 +406,11 @@
             // 
             // btnListar
             // 
-            btnListar.Location = new Point(449, 41);
+            btnListar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnListar.ForeColor = Color.FromArgb(192, 0, 0);
+            btnListar.Location = new Point(449, 42);
             btnListar.Name = "btnListar";
-            btnListar.Size = new Size(75, 23);
+            btnListar.Size = new Size(109, 32);
             btnListar.TabIndex = 2;
             btnListar.Text = "Listar";
             btnListar.UseVisualStyleBackColor = true;
@@ -379,17 +418,20 @@
             // 
             // txtDniBusqueda
             // 
+            txtDniBusqueda.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtDniBusqueda.Location = new Point(129, 41);
             txtDniBusqueda.Name = "txtDniBusqueda";
-            txtDniBusqueda.Size = new Size(284, 23);
+            txtDniBusqueda.Size = new Size(284, 29);
             txtDniBusqueda.TabIndex = 1;
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(73, 44);
+            label8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label8.ForeColor = Color.Black;
+            label8.Location = new Point(70, 47);
             label8.Name = "label8";
-            label8.Size = new Size(30, 15);
+            label8.Size = new Size(40, 21);
             label8.TabIndex = 0;
             label8.Text = "DNI:";
             // 
@@ -398,18 +440,20 @@
             Tab_Configuracion.Controls.Add(btn_GuardarConfig);
             Tab_Configuracion.Controls.Add(groupBox4);
             Tab_Configuracion.Controls.Add(groupBox3);
-            Tab_Configuracion.Location = new Point(4, 24);
+            Tab_Configuracion.Location = new Point(4, 34);
             Tab_Configuracion.Name = "Tab_Configuracion";
-            Tab_Configuracion.Size = new Size(784, 417);
+            Tab_Configuracion.Size = new Size(790, 491);
             Tab_Configuracion.TabIndex = 2;
             Tab_Configuracion.Text = "CONFIGURACION";
             Tab_Configuracion.UseVisualStyleBackColor = true;
             // 
             // btn_GuardarConfig
             // 
-            btn_GuardarConfig.Location = new Point(270, 367);
+            btn_GuardarConfig.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_GuardarConfig.ForeColor = Color.FromArgb(192, 0, 0);
+            btn_GuardarConfig.Location = new Point(273, 442);
             btn_GuardarConfig.Name = "btn_GuardarConfig";
-            btn_GuardarConfig.Size = new Size(225, 23);
+            btn_GuardarConfig.Size = new Size(225, 32);
             btn_GuardarConfig.TabIndex = 2;
             btn_GuardarConfig.Text = "Guardar Configuración";
             btn_GuardarConfig.UseVisualStyleBackColor = true;
@@ -419,27 +463,32 @@
             // 
             groupBox4.Controls.Add(txtApiKeyReniec);
             groupBox4.Controls.Add(label13);
+            groupBox4.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            groupBox4.ForeColor = Color.FromArgb(192, 0, 0);
             groupBox4.Location = new Point(49, 252);
             groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(681, 100);
+            groupBox4.Size = new Size(681, 124);
             groupBox4.TabIndex = 1;
             groupBox4.TabStop = false;
             groupBox4.Text = "API Keys";
             // 
             // txtApiKeyReniec
             // 
-            txtApiKeyReniec.Location = new Point(31, 52);
+            txtApiKeyReniec.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtApiKeyReniec.Location = new Point(31, 61);
             txtApiKeyReniec.Name = "txtApiKeyReniec";
-            txtApiKeyReniec.Size = new Size(333, 23);
+            txtApiKeyReniec.Size = new Size(333, 29);
             txtApiKeyReniec.TabIndex = 1;
             txtApiKeyReniec.Text = "**********";
             // 
             // label13
             // 
             label13.AutoSize = true;
+            label13.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label13.ForeColor = Color.Black;
             label13.Location = new Point(31, 34);
             label13.Name = "label13";
-            label13.Size = new Size(105, 15);
+            label13.Size = new Size(139, 21);
             label13.TabIndex = 0;
             label13.Text = "API Key de RENIEC";
             // 
@@ -451,18 +500,21 @@
             groupBox3.Controls.Add(txtoOrigen);
             groupBox3.Controls.Add(label12);
             groupBox3.Controls.Add(label11);
+            groupBox3.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            groupBox3.ForeColor = Color.FromArgb(192, 0, 0);
             groupBox3.Location = new Point(49, 40);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(681, 156);
+            groupBox3.Size = new Size(681, 206);
             groupBox3.TabIndex = 0;
             groupBox3.TabStop = false;
             groupBox3.Text = "Configuración de Archivos PDF";
             // 
             // btn_SeleccionarDestino
             // 
-            btn_SeleccionarDestino.Location = new Point(417, 111);
+            btn_SeleccionarDestino.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_SeleccionarDestino.Location = new Point(417, 143);
             btn_SeleccionarDestino.Name = "btn_SeleccionarDestino";
-            btn_SeleccionarDestino.Size = new Size(193, 23);
+            btn_SeleccionarDestino.Size = new Size(193, 32);
             btn_SeleccionarDestino.TabIndex = 5;
             btn_SeleccionarDestino.Text = "Seleccionar ruta";
             btn_SeleccionarDestino.UseVisualStyleBackColor = true;
@@ -470,9 +522,10 @@
             // 
             // btn_SeleccionarOrigen
             // 
-            btn_SeleccionarOrigen.Location = new Point(417, 55);
+            btn_SeleccionarOrigen.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_SeleccionarOrigen.Location = new Point(417, 63);
             btn_SeleccionarOrigen.Name = "btn_SeleccionarOrigen";
-            btn_SeleccionarOrigen.Size = new Size(193, 23);
+            btn_SeleccionarOrigen.Size = new Size(193, 32);
             btn_SeleccionarOrigen.TabIndex = 4;
             btn_SeleccionarOrigen.Text = "Seleccionar ruta";
             btn_SeleccionarOrigen.UseVisualStyleBackColor = true;
@@ -480,33 +533,39 @@
             // 
             // txtDestino
             // 
-            txtDestino.Location = new Point(31, 111);
+            txtDestino.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtDestino.Location = new Point(31, 143);
             txtDestino.Name = "txtDestino";
-            txtDestino.Size = new Size(333, 23);
+            txtDestino.Size = new Size(368, 29);
             txtDestino.TabIndex = 3;
             // 
             // txtoOrigen
             // 
-            txtoOrigen.Location = new Point(31, 55);
+            txtoOrigen.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtoOrigen.Location = new Point(31, 63);
             txtoOrigen.Name = "txtoOrigen";
-            txtoOrigen.Size = new Size(333, 23);
+            txtoOrigen.Size = new Size(368, 29);
             txtoOrigen.TabIndex = 2;
             // 
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(31, 93);
+            label12.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label12.ForeColor = Color.Black;
+            label12.Location = new Point(31, 117);
             label12.Name = "label12";
-            label12.Size = new Size(191, 15);
+            label12.Size = new Size(254, 21);
             label12.TabIndex = 1;
             label12.Text = "Ruta de Destino (Escritura de PDFs)";
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(31, 37);
+            label11.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label11.ForeColor = Color.Black;
+            label11.Location = new Point(31, 35);
             label11.Name = "label11";
-            label11.Size = new Size(181, 15);
+            label11.Size = new Size(240, 21);
             label11.TabIndex = 0;
             label11.Text = "Ruta de Origen (Lectura de PDFs)";
             // 
@@ -514,7 +573,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 531);
             Controls.Add(btn_SaveConfig);
             Name = "MainForm";
             Text = "PDFManager";
@@ -574,11 +633,11 @@
         private Label label11;
         private Button btn_GuardarConfig;
         private Button btnGuardar;
+        private Button btn_SeleccionarDestino;
+        private Button btn_SeleccionarOrigen;
         private DataGridViewTextBoxColumn Col_Cliente;
         private DataGridViewTextBoxColumn Col_Codigo;
         private DataGridViewTextBoxColumn Col_Fecha;
         private DataGridViewImageColumn Col_Open;
-        private Button btn_SeleccionarDestino;
-        private Button btn_SeleccionarOrigen;
     }
 }
