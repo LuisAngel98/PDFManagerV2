@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.Configuration;
-using PDFManagerV2.UseCases.Recibos.Interfaces;
+using PDFManagerV2.UseCases.Interfaces;
 using System.Text.Json;
 using System.Text.Json.Nodes;
 
@@ -22,6 +22,7 @@ namespace PDFManagerV2.Infrastructure.Pdf
 
         public string PdfOutputPath => LoadConfig()["AppSettings"]?["PdfOutputPath"]?.ToString() ?? string.Empty;
         public string PdfInputPath => LoadConfig()["AppSettings"]?["PdfInputPath"]?.ToString() ?? string.Empty;
+        public string ReniecApiKey => LoadConfig()["AppSettings"]?["ReniecApiKey"]?.ToString() ?? string.Empty;
 
         public void UpdateSetting(string key, string value)
         {

@@ -231,6 +231,7 @@
             btnBuscar.TabIndex = 2;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = true;
+            btnBuscar.Click += btnBuscar_Click;
             // 
             // txtMonto
             // 
@@ -451,7 +452,7 @@
             // 
             btn_GuardarConfig.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btn_GuardarConfig.ForeColor = Color.FromArgb(192, 0, 0);
-            btn_GuardarConfig.Location = new Point(273, 442);
+            btn_GuardarConfig.Location = new Point(271, 408);
             btn_GuardarConfig.Name = "btn_GuardarConfig";
             btn_GuardarConfig.Size = new Size(225, 32);
             btn_GuardarConfig.TabIndex = 2;
@@ -477,6 +478,7 @@
             txtApiKeyReniec.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtApiKeyReniec.Location = new Point(31, 61);
             txtApiKeyReniec.Name = "txtApiKeyReniec";
+            txtApiKeyReniec.PasswordChar = '*';
             txtApiKeyReniec.Size = new Size(333, 29);
             txtApiKeyReniec.TabIndex = 1;
             txtApiKeyReniec.Text = "**********";
@@ -536,6 +538,7 @@
             txtDestino.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtDestino.Location = new Point(31, 143);
             txtDestino.Name = "txtDestino";
+            txtDestino.ReadOnly = true;
             txtDestino.Size = new Size(368, 29);
             txtDestino.TabIndex = 3;
             // 
@@ -544,6 +547,7 @@
             txtoOrigen.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtoOrigen.Location = new Point(31, 63);
             txtoOrigen.Name = "txtoOrigen";
+            txtoOrigen.ReadOnly = true;
             txtoOrigen.Size = new Size(368, 29);
             txtoOrigen.TabIndex = 2;
             // 
@@ -576,6 +580,7 @@
             ClientSize = new Size(800, 531);
             Controls.Add(btn_SaveConfig);
             Name = "MainForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "PDFManager";
             Load += MainForm_Load;
             btn_SaveConfig.ResumeLayout(false);

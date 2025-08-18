@@ -1,8 +1,8 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using PDFManagerV2.Infrastructure.Pdf;
+using PDFManagerV2.UseCases.Interfaces;
 using PDFManagerV2.UseCases.Recibos.Create;
-using PDFManagerV2.UseCases.Recibos.Interfaces;
 
 namespace PDFManagerV2.Desktop
 {

@@ -1,7 +1,8 @@
 using MediatR;
+using PDFManagerV2.UseCases.Clientes.FetchByDni;
+using PDFManagerV2.UseCases.Interfaces;
 using PDFManagerV2.UseCases.Recibos.Create;
 using PDFManagerV2.UseCases.Recibos.GetByDni;
-using PDFManagerV2.UseCases.Recibos.Interfaces;
 using System.Windows.Forms;
 
 namespace PDFManagerV2.Desktop
@@ -112,13 +113,15 @@ namespace PDFManagerV2.Desktop
         {
             _appSettings.UpdateSetting("PdfOutputPath", txtoOrigen.Text);
             _appSettings.UpdateSetting("PdfInputPath", txtDestino.Text);
-            MessageBox.Show($"{_appSettings.PdfOutputPath}-{_appSettings.PdfInputPath}", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            _appSettings.UpdateSetting("ReniecApiKey", txtApiKeyReniec.Text);
+            MessageBox.Show($"Configuración actualizada correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
             txtoOrigen.Text = _appSettings.PdfOutputPath;
             txtDestino.Text = _appSettings.PdfInputPath;
+            txtApiKeyReniec.Text = _appSettings.ReniecApiKey;
         }
 
         private void btn_SeleccionarOrigen_Click(object sender, EventArgs e)
@@ -148,6 +151,22 @@ namespace PDFManagerV2.Desktop
                 string ruta = dialog.SelectedPath;
                 _appSettings.UpdateSetting("PdfOutputPath", ruta);
                 txtDestino.Text = ruta;
+            }
+        }
+
+        private async void btnBuscar_Click(object sender, EventArgs e)
+        {
+            var dni = txtDni.Text.Trim();
+            var result = await _mediator.Send(new FetchByDniQuery(dni));
+            if (result.IsSuccess)
+            {
+                var cliente = result.Value;
+                txtNombres.Text = cliente.Nombres;
+                txtApellidos.Text = cliente.Apellidos;
+            }
+            else
+            {
+                MessageBox.Show($"Error al buscar el cliente: {result.Errors}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using PDFManagerV2.Core;
 using PDFManagerV2.Shared;
-using PDFManagerV2.UseCases.Recibos.Interfaces;
+using PDFManagerV2.UseCases.Interfaces;
 
 namespace PDFManagerV2.UseCases.Recibos.GetByDni
 {
@@ -14,7 +14,7 @@ namespace PDFManagerV2.UseCases.Recibos.GetByDni
         }
         public async Task<Result<List<Recibo>>> Handle(GetByDniQuery request, CancellationToken cancellationToken)
         {
-            return await _fileStorageService.GetByDniAsync(request.dni);
+            return await _fileStorageService.GetByDniAsync(request.Dni);
         }
     }
 }

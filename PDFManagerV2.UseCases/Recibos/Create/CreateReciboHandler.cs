@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using PDFManagerV2.Core;
 using PDFManagerV2.Shared;
-using PDFManagerV2.UseCases.Recibos.Interfaces;
+using PDFManagerV2.UseCases.Interfaces;
 
 namespace PDFManagerV2.UseCases.Recibos.Create
 {

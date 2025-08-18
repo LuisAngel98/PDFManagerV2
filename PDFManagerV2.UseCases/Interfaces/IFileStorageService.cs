@@ -1,7 +1,7 @@
 ﻿using PDFManagerV2.Core;
 using PDFManagerV2.Shared;
 
-namespace PDFManagerV2.UseCases.Recibos.Interfaces
+namespace PDFManagerV2.UseCases.Interfaces
 {
     public interface IFileStorageService
     {

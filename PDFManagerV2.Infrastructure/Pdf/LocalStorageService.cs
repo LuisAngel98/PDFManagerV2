@@ -1,7 +1,7 @@
 ﻿using iTextSharp.text.pdf;
 using PDFManagerV2.Core;
 using PDFManagerV2.Shared;
-using PDFManagerV2.UseCases.Recibos.Interfaces;
+using PDFManagerV2.UseCases.Interfaces;
 using System.Globalization;
 
 namespace PDFManagerV2.Infrastructure.Pdf

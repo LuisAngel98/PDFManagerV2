@@ -4,5 +4,5 @@ using PDFManagerV2.Shared;
 
 namespace PDFManagerV2.UseCases.Recibos.GetByDni
 {
-    public record class GetByDniQuery(string dni) : IRequest<Result<List<Recibo>>>;
+    public record GetByDniQuery(string Dni) : IRequest<Result<List<Recibo>>>;
 }
